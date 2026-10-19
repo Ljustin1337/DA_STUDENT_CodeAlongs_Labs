@@ -163,8 +163,11 @@ us find out for ourselves.
 **Before you write any code, open the file and look at it.** You will not be told what is in here. Finding out is the first part of the work. Answer these three:
 
 1. What does one row represent?
+Week of day worked 
 2. Which fields hold numbers, and which hold text?
+first 2 Columns are text, Column 3 holds Numbers 
 3. What already looks wrong, missing or inconsistent?
+Inconsistensy between days and hours worked per person.
 
 *Answer them at the top of `trace-the-path_STUDENT.py`, under THE DATA.*
 

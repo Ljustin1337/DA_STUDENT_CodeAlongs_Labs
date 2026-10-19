@@ -28,21 +28,32 @@ fill it in before you run the file again.
 print('----- 1. If/Elif/Else, Live -----')
 # TODO: set temperature to any number, then write the
 # if/elif/else check yourself before revealing the answer
+# >71 too hot, < 71 mucho frio, = 71 just right!
 temperature = 71
-
+if temperature > 71:
+    print("Too hot")
+elif temperature < 71:
+    print("Mucho frio")
+else:
+    print("Just right!")    
 
 # ===== 2. For Loop, Live =====
 # Print the four scores, one per line, so the output is 88, 92, 75, then 100.
 print('----- 2. For Loop, Live -----')
 # TODO: write a for loop that prints every value in scores
 scores = [88, 92, 75, 100]
+for item in scores:
+    print(item)
 
 
 # ===== 3. range() Generates Numbers to Loop Over =====
+#
 # Count from 0 up to 4 with range(), one number per line. Notice it stops
 # before 5.
 print('----- 3. range() Generates Numbers to Loop Over -----')
 # TODO: use range() to print the numbers 0 through 4
+for x in range(5):
+    print(x)
 
 # PREDICT before you run: Change range(5) to range(3). What does the loop print
 #                         now?
@@ -66,6 +77,9 @@ print('----- 4. While Loop, Live -----')
 # think carefully about the condition
 count = 0
 
+while count <= 3:
+    print(count)
+    count = count + 1 
 # PREDICT before you run: In the While Loop, Live code above, change count <= 3
 #                         to count < 3. How many numbers print?
 # Your answer:
@@ -80,3 +94,8 @@ print('----- 5. Loop and Conditional, Together -----')
 # TODO: loop over scores; for each one, print "great job"
 # if it's 90 or above, otherwise print "keep practicing"
 scores = [88, 92, 75, 100]
+for item in scores:
+    if item >= 90:
+        print(item, " - Great Job")
+    else:
+        print(item, " - Keep Practicing")
