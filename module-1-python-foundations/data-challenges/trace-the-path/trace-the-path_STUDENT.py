@@ -16,6 +16,7 @@ HOW TO RUN
 
 THE DATA      data/volunteer_shifts.txt
 
+
 ANSWER EVERYTHING IN THIS FILE
     - Code goes under each step's banner.
     - Written answers go in # comments under each "# Your answer:"
@@ -212,7 +213,7 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 #
 # Both loops run clean, with no traceback from either. Only one of them is
 # right.
-
+"""
 buggy_seen = 0
 for i in range(len(shifts) - 1):
     buggy_seen = buggy_seen + 1
@@ -229,7 +230,7 @@ print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
 print("the row it never saw:", None)
-
+"""
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
 #
