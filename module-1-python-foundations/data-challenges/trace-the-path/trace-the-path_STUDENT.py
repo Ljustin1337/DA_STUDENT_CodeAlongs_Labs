@@ -44,17 +44,17 @@ SUBMIT
 ############################################################################
 
 # 1. What does one row represent?
-# Your answer:
-#
+# Your answer:   
+# Each row shows the every volunteers day worked and total amount of hours worked  
 #
 
 # 2. Which fields hold numbers, and which hold text?
-# Your answer:
+# Your answer: Column 1 and 2 are both text values, whereas column 3 is a number value. 
 #
 #
 
 # 3. What already looks wrong, missing or inconsistent?
-# Your answer:
+# Your answer: The inconsistensy of amount of days worked by each volunteer. 
 #
 #
 
@@ -64,7 +64,8 @@ SUBMIT
 
 # ===== Step 1: Count the Shifts of 4+ Hours, Prediction First =====
 # The coordinator counts any shift of 4 hours or more as a long shift.
-#
+# Long Shift for the week: 5 Shifts total
+
 # 1. Research .split(",") as a team. It is new, and the line that pulls out
 #    hours uses it. Look it up, then run it on one line of this file and
 #    print what comes back. Under the "# Your answer:" line below, type 2-3
@@ -89,7 +90,7 @@ with open("data/volunteer_shifts.txt") as f:
     shifts = [line for line in f.read().splitlines()
               if line and not line.startswith("#")]
 
-long_shifts = 0
+long_shifts = 4
 for shift in shifts:
     hours = int(shift.split(",")[2])
     # TODO: write the test for a long shift. The coordinator counts a
