@@ -126,6 +126,9 @@ print("shifts of 4+ hours:", long_shifts)
 #    The week's total hours: add the third field down all 12 rows. The
 #    number of lines that will print: the loop prints once per row it
 #    visits, so count the rows.
+    # Hours total:37 Hours and 12 rows total. 
+
+
 # 2. Add this shift's hours onto the running total in the first TODO.
 #    Everything that came out of shift.split(",") is a string, so something
 #    has to convert it.
@@ -137,16 +140,23 @@ print("shifts of 4+ hours:", long_shifts)
 # That printed line per pass is a tracing tool, not decoration.
 
 total = 0
-for shift in shift:
-    volunteer, day, hours = shift.split(",")
+
+with open("/Users/jlee333/DA_STUDENT_CodeAlongs_Labs/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/trace-the-path/data/volunteer_shifts.txt", "r") as file:
+    for shift in file.read().splitlines():
+        # I forgot to add this       ^ and IT BROKE THE CODE FOR ME fun stuff :)
+        # adding the .read so it can read the while file as one string rather than muiltple strings.
+        if shift and not shift.startswith("#"):
+            volunteer, day, hours = shift.split(",")
+        # from here we need to convert strings into an interger.
+            hours = int(hours)
+
     # TODO: add this shift's hours onto the running total. Mind the
     #       type: everything that came out of that split is a string.
-    total = None
+            total = total + hours
     # TODO: print one line per pass: the day, the volunteer, and the
     #       total so far. This printed line IS the tracing tool.
-    print(day, volunteer, "| running total:", None)
-
-    print("total hours logged this week:", total)
+            print(day, volunteer, "running total:", total)
+print("total hours logged this week:", total)
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
