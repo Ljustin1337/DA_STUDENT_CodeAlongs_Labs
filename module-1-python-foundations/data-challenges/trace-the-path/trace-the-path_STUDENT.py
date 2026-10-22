@@ -200,31 +200,39 @@ print("total hours logged this week:", total)
 #    distinct volunteer names in the file, count the distinct weekdays, and
 #    multiply the two. Write it in a comment as <volunteers> x <days> =
 #    <cells> before you write or run anything.
+# ^Answer: Amara x 4 = 4 , Luis x 3 = 3 , Pryia x 3 =3, Dev x 2 = 2    
 # 2. Collect the distinct volunteers in the first if TODO: one entry per
 #    volunteer, no repeats.
+
+
 # 3. Collect the distinct weekdays in the second if TODO, the same way.
+
 # 4. Write the inner loop header so it runs once per weekday, for every
 #    volunteer.
+
 # 5. Run it, and compare checks against the multiplication you wrote.
 #
 # If your prediction was a number of records rather than a number of pairs,
 # that gap is the thing to bring to the shareout.
 
-volunteers = []
-days = []
-for shift in shift:
-    volunteer, day, hours = shift.split(",")
+volunteers = ["Amara", "Luis", "Priya", "Dev", "justin"]
+days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+with open("/Users/jlee333/DA_STUDENT_CodeAlongs_Labs/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/trace-the-path/data/volunteer_shifts.txt", "r") as file:
+    for shift in file.read().splitlines():
+        if shift and not shift.startswith("#"):
+            volunteer, day, hours = shift.split(",")
     # TODO: only append a volunteer this list does not already have.
-    if None:
-        volunteers.append(volunteer)
+            if volunteer not in volunteers:
+                volunteers.append(volunteer)
     # TODO: the same test again, for the day.
-    if None:
-        days.append(day)
+            if day not in days:
+                days.append(day)
 
 checks = 0
 for volunteer in volunteers:
     # TODO: the inner loop. One pass per weekday, for each volunteer.
-    for day in None:
+    for volunteer in days:
         checks = checks + 1
 
 print(len(volunteers), "volunteers x", len(days), "days =", checks)
