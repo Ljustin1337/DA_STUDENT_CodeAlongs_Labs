@@ -143,7 +143,7 @@ total = 0
 
 with open("/Users/jlee333/DA_STUDENT_CodeAlongs_Labs/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/trace-the-path/data/volunteer_shifts.txt", "r") as file:
     for shift in file.read().splitlines():
-        # I forgot to add this       ^ and IT BROKE THE CODE FOR ME fun stuff :)
+        # I forgot to add this        ^ and IT BROKE THE CODE FOR ME fun stuff :)
         # adding the .read so it can read the while file as one string rather than muiltple strings.
         if shift and not shift.startswith("#"):
             volunteer, day, hours = shift.split(",")
@@ -163,15 +163,25 @@ print("total hours logged this week:", total)
 #
 # - Your two predictions, exactly as you first wrote them. Un-edited. Say
 #   whether each one was right.
+# It was correct as my output of running totals was 37 as for the amount of rows outputed was 12. 
 # - What you mis-traced, if one was wrong. A condition read backwards, a
 #   variable you forgot updates every pass, a loop you thought ran one more
 #   time than it does.
+
+# for shift in file.read().splitlines(): this line was giving me a lot of trouble as at the end of .splitlines I forgot to put the s at the very end and overlooked it really easily checking everything else first. 
+# Also, with indentations makeing sure the correct within my nested loop.
+#   
 # - Your observations on the data file, from the three questions you
 #   answered before writing any code. Say whether anything turned out
 #   different from what you assumed.
+
+# Yes a few issues were like mislabeling some variables from shifts and shift which is a huge thing I kept overlooking and also knowing when and where to put in the interger function. 
+
 # - How you traced it. Did you print a line per pass, or hold the loop in
 #   your head? Say which you would use on 430 rows.
-#
+
+#I held the loop and had a seperate .py file to help me test my code as I went along and ran into errors.
+# For a data set of 430 I would use a print a line per pass as rather than keeping it all in my head, so all I would need to worry about would just be the mathmatic equations and code. 
 # Be ready to answer "why did you do it that way?"
 
 # Your notes for the share out:
