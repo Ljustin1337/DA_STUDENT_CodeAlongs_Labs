@@ -215,7 +215,7 @@ print("total hours logged this week:", total)
 # If your prediction was a number of records rather than a number of pairs,
 # that gap is the thing to bring to the shareout.
 
-volunteers = ["Amara", "Luis", "Priya", "Dev", "justin"]
+volunteers = ["Amara", "Luis", "Priya", "Dev"]
 days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
 
 with open("/Users/jlee333/DA_STUDENT_CodeAlongs_Labs/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/trace-the-path/data/volunteer_shifts.txt", "r") as file:
@@ -246,7 +246,12 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 #    1) and work out the rule: what is the first value of i, and what is the
 #    last? Then write two things in a comment: how many rows the buggy loop
 #    visits, and which row it never reaches.
-# 2. Write the loop header that visits every row. Only the range changes;
+
+# The first value of i is 0 since the buggy_seen = 0. For the last it would be 11 since we have a total of 12 unique rows and we added a -1 at the end of our variable. 
+# I think itll reach every row but the last row within the dataset since we have the -1 at the end of our function. 
+# Missing row data guess: priya, Fri, 2
+
+#  2. Write the loop header that visits every row. Only the range changes;
 #    the body below it is already right.
 # 3. Print the row the broken loop never reached, reaching into shifts by
 #    position rather than retyping the row by hand.
@@ -255,9 +260,9 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 #
 # Both loops run clean, with no traceback from either. Only one of them is
 # right.
-"""
+
 buggy_seen = 0
-for i in range(len(shifts) - 1):
+for i in range(len(shift) - 1):
     buggy_seen = buggy_seen + 1
 
 fixed_seen = 0
@@ -266,13 +271,13 @@ fixed_seen = 0
 for i in None:
     fixed_seen = fixed_seen + 1
 
-print("rows in the file:   ", len(shifts))
+print("rows in the file:   ", len(shift))
 print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
 print("the row it never saw:", None)
-"""
+
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
 #
