@@ -253,8 +253,10 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 
 #  2. Write the loop header that visits every row. Only the range changes;
 #    the body below it is already right.
+#
 # 3. Print the row the broken loop never reached, reaching into shifts by
 #    position rather than retyping the row by hand.
+
 # 4. Run it, and compare all three counts (rows in the file, buggy visits,
 #    fixed visits) against your prediction.
 #
@@ -262,13 +264,13 @@ print(len(volunteers), "volunteers x", len(days), "days =", checks)
 # right.
 
 buggy_seen = 0
-for i in range(len(shift) - 1):
+for i in range(len(shift)- 1):
     buggy_seen = buggy_seen + 1
 
 fixed_seen = 0
 # TODO: write the loop header that visits EVERY row, not all but one.
 #       The body below is already correct. Only the range changes.
-for i in None:
+for i in range(len(shift)):
     fixed_seen = fixed_seen + 1
 
 print("rows in the file:   ", len(shift))
@@ -276,7 +278,7 @@ print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-print("the row it never saw:", None)
+print("the row it never saw:", shift)
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
