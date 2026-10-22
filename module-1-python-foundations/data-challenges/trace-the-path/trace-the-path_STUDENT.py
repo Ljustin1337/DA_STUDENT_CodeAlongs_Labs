@@ -70,7 +70,12 @@ SUBMIT
 #    hours uses it. Look it up, then run it on one line of this file and
 #    print what comes back. Under the "# Your answer:" line below, type 2-3
 #    bullets: what .split() hands back, what the "," controls, and where you
-#    found that out.
+#    found that out
+
+# The split command cuts up a text at the point of the comma and divides it accordingly. If youre provided with a list of numbers the split would then hand you a list of organmized text of those text while getting rid of the commas orginally used. 
+
+
+# 4 total rows where it's 4 or more
 # 2. Predict the count by reading the file, not the code. You opened
 #    data/volunteer_shifts.txt above and it holds 12 shift rows. Read the
 #    third field on each row and count the rows where it is 4 or more. Write
@@ -78,31 +83,39 @@ SUBMIT
 #    single line.
 # 3. Write the test for a long shift in the first TODO. "4 hours or more" is
 #    the rule, word for word.
+
+
+# for shift in shifts: 
+#        if hour >= 4: 
+#            long_shifts = long_shifts + 1 
+# print(long_shifts) 
+
 # 4. Write the counting line in the second TODO, moving long_shifts on by
 #    one.
+
 # 5. Run it, and compare the printed count against the number in your
 #    comment.
 #
 # If the two differ, say which line you mis-read. Do not edit the
 # prediction.
 
-with open("data/volunteer_shifts.txt") as f:
-    shifts = [line for line in f.read().splitlines()
-              if line and not line.startswith("#")]
+long_shifts = 0
 
-long_shifts = 4
-for shift in shifts:
-    hours = int(shift.split(",")[2])
-    # TODO: write the test for a long shift. The coordinator counts a
-    #       shift of 4 hours or more.
-    if None:
-        # TODO: this is the counting line. Move long_shifts on by one.
-        long_shifts = None
-
+with open("/Users/jlee333/DA_STUDENT_CodeAlongs_Labs/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/trace-the-path/data/volunteer_shifts.txt", "r") as file:
+    for shift in file.read().splitlines():
+# Ignores the blank spaces and headers
+        if not shift.startswith("#"):
+            hours = int(shift.split(",")[2])
+            if hours>=4:
+                long_shifts = long_shifts + 1 
 print("shifts of 4+ hours:", long_shifts)
-
-# Your answer:
-#
+        
+    # TODO: write the test for a long shift. The coordinator counts a
+    # shift of 4 hours or more.
+    # i wanna cry
+    # TODO: this is the counting line. Move long_shifts on by one.
+       # Your answer:
+# With the shiift.split(",")
 #
 
 # ===== Step 2: Total the Week's Hours, Printing the Running Total Each Pass =====
@@ -124,7 +137,7 @@ print("shifts of 4+ hours:", long_shifts)
 # That printed line per pass is a tracing tool, not decoration.
 
 total = 0
-for shift in shifts:
+for shift in shift:
     volunteer, day, hours = shift.split(",")
     # TODO: add this shift's hours onto the running total. Mind the
     #       type: everything that came out of that split is a string.
@@ -133,7 +146,7 @@ for shift in shifts:
     #       total so far. This printed line IS the tracing tool.
     print(day, volunteer, "| running total:", None)
 
-print("total hours logged this week:", total)
+    print("total hours logged this week:", total)
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -179,7 +192,7 @@ print("total hours logged this week:", total)
 
 volunteers = []
 days = []
-for shift in shifts:
+for shift in shift:
     volunteer, day, hours = shift.split(",")
     # TODO: only append a volunteer this list does not already have.
     if None:
