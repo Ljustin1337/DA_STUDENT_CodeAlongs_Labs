@@ -8,7 +8,7 @@
 
 It's your first week as a junior analyst on a small city-government data team. Before anyone hands you real data, your team lead gives you one onboarding rule: "If it isn't in git, it doesn't exist — and if all I see is one commit called 'final', I can't review your work."
 
-Your task today is to prove you can set up a tracked project from nothing: a clean folder on your own machine, a repo with a README a teammate could actually read, a history that shows your work in real steps, and a copy on GitHub your lead can open without borrowing your laptop.
+Your task today is to prove you can set up a tracked project from nothing: a clean folder on your own machine, a repo with a README a teammate could actually read, a history that shows your work in real steps, and a copy on GitHub your lead can open without borrowing your laptop. 
 
 Work through it with your group — talk through what each command is doing and check each other's commit messages — but every Fellow builds and pushes their own repo. You'll compare histories with the whole class at the end.
 
