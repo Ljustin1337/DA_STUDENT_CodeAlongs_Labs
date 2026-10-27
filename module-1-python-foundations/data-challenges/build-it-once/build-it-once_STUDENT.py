@@ -44,18 +44,17 @@ SUBMIT
 
 # 1. What does one row represent?
 # Your answer:
-#
+# Each row represents a person's class taken and the number of sessions per class type.
 #
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
-#
+# The first two columns hold string variables (text), and the third column holds an integer (number).
 #
 
-# 3. What already looks wrong, missing or inconsistent?
+# 3. What already looks wrong, missing, or inconsistent?
 # Your answer:
-#
-#
+# The way it's currently organized makes it a little unstructured; we can refine this by separating it by either the member name or the class name.
 
 ############################################################################
 #  DAY 1
