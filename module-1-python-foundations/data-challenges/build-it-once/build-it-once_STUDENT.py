@@ -127,11 +127,15 @@ print("swim only:  ", total_sessions(swim_only))
 # ===== Step 2: Count Long Bookings at Two Different Cutoffs With One Function =====
 # The board changed the long-booking cutoff from 4 sessions to 2. Answering
 # both should cost you one extra argument, not a second function.
-#
+#                                   ^^^
 # 1. Predict both returned: counts in a comment, reading the third field
 #    down the file: once for 4 or more, once for 2 or more.
+        # 4 and more:7 | 2 or more:11
+        
 # 2. Write count_long_bookings(records, minimum) so it counts the records
 #    whose sessions number is minimum or more, and returns that count.
+
+
 # 3. Write show_long_bookings(records, minimum) so it prints a sentence with
 #    the same count in it. Only print. Do not add a return.
 # 4. Run the whole file, including the lines at the bottom that were written
