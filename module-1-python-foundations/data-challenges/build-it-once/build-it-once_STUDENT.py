@@ -433,16 +433,32 @@ def signups_for(record, member):
         if name == member:
             signup.append(record)
     return signup
+print(signups_for(signups,"Nia"))
+print(signups_for(signups,"Omar"))
+print(signups_for(signups,"Tess"))
+print(signups_for(signups,"Rafi"))
+print(signups_for(signups,"Gwen"))
 
-print(signups_for(signups,"Omar" ))
 
 
 
-pass
 
 def total_for(records, member):
+    total = 0
+    for record in records: 
+        name, class_name, session = record.split(',')
+        if name == member:
+            total +=int(session)
+    return total
+print(total_for(signups,"Nia"))        
+print(total_for(signups,"Omar"))        
+print(total_for(signups,"Tess"))   
+print(total_for(signups,"Rafi"))        
+print(total_for(signups,"Gwen"))        
+
+
     # This one should get its work done by calling the other two.
-    pass
+pass
 
 # TODO: print a line per member
 
