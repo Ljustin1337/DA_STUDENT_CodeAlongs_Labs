@@ -107,7 +107,11 @@ swim_only = []
 
 for row in signups:
     member, class_name, session = row.split(',')
-    
+    if class_name.strip() == "Swim":
+        swim_only.append(row)
+
+
+
 
 # TODO: fill swim_only with just the Swim records
 
