@@ -394,12 +394,15 @@ def log_signup_broken(record):
 # not one.
 #
 # 1. Write sessions_in(record) so it pulls the sessions number out of a
-#    single record and returns it.
+#    single record and returns it. 
+
 # 2. Write signups_for(records, member) so it returns just the records
 #    belonging to one member.
+
 # 3. Write total_for(records, member) so it returns that member's total
 #    sessions, doing almost nothing itself. It gets its work done by calling
 #    the other two.
+
 # 4. Predict Gwen's total in a comment, adding up Gwen's rows in the file by
 #    hand.
 # 5. Print one line per member for Nia, Omar, Tess, Rafi and Gwen, and check
@@ -410,11 +413,32 @@ def log_signup_broken(record):
 
 # Three function names. Everything else is yours.
 
-def sessions_in(record):
-    pass
 
-def signups_for(records, member):
-    pass
+
+def sessions_in(record):
+    member, class_name, session = record.split(',')
+    return int(session)
+    
+print(sessions_in(signups[0])) 
+
+# length = sessions_in(signups[2])
+# print(length)  do it this way if you want to store the data. 
+
+
+
+def signups_for(record, member):
+    signup = []
+    for record in record:
+        name, class_name, session = record.split(',')
+        if name == member:
+            signup.append(record)
+    return signup
+
+print(signups_for(signups,"Omar" ))
+
+
+
+pass
 
 def total_for(records, member):
     # This one should get its work done by calling the other two.
