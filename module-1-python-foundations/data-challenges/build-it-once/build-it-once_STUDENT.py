@@ -165,11 +165,22 @@ def count_long_bookings(records, minimum):
                     # I didn't include the minimum, but that fixed it.
             count += 1
     return count
+     
     # TODO: count the records whose sessions number is `minimum` or more
+    
     # TODO: return the count
-    pass
+    
 
 def show_long_bookings(records, minimum):
+    count = 0 
+    for row in records:
+        member, class_name, session = row.split(',')
+        if int(session) >= minimum:
+            count += 1
+        
+
+     
+
     # TODO: print a sentence with the same count in it. Only print.
     pass
 
@@ -180,8 +191,10 @@ handed_back = show_long_bookings(signups, 4)
 print("what show_long_bookings handed back:", handed_back)
 
 # Your answer:
-#
-#
+# Prediction: It should hand out the exact same values from the first loop we made so 7 and 11.
+# 
+# The function returned `None` because when using print instead of return. 
+# return passes the value back to the loop, whereas print only outputs it to the console.
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
@@ -226,7 +239,7 @@ print("what show_long_bookings handed back:", handed_back)
 # Both versions run clean. Decide which of the two you would trust in a file
 # you did not write, and say what in the call line told you.
 
-sessions_cutoff = 4
+sessions_cutoff = 4 
 
 def count_reaching_outside(records):
     # TODO: same count as count_long_bookings, but take NO minimum
