@@ -182,7 +182,7 @@ def show_long_bookings(records, minimum):
      
 
     # TODO: print a sentence with the same count in it. Only print.
-    pass
+    
 
 print("returned:", count_long_bookings(signups, 4))
 print("returned:", count_long_bookings(signups, 2))
@@ -270,7 +270,7 @@ def count_reaching_outside(records):
 
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
-    pass
+    
 
 
 print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
@@ -296,13 +296,21 @@ sessions_cutoff = 2
 # 1. Write log_signup(record, previous_member) so it pulls the member name
 #    out of record, prints the previous member and this one on one line, and
 #    returns this member's name.
+
 # 2. Call it on signups[0], then on signups[1], storing what it returns back
 #    into last_member each time. Predict both printed lines in a comment
 #    first, reading the names off the top of the file.
+
+# Prediction: It'll print the first 2 colunms of the database so in this case the name and class taken.
+
 # 3. Leave log_signup_broken exactly as written. It tries the same job by
 #    reading and then updating last_seen, a name defined above the function.
+
 # 4. Predict in a comment whether its print line will work. The step above
 #    showed a function reading an outside name just fine.
+
+# I think itll work fine as its reading a function from outside the ma,e.
+
 # 5. Run the file, read the traceback, and write down the exception name,
 #    the variable and the line it points at, in your own words, before you
 #    look anything up.
@@ -314,15 +322,31 @@ sessions_cutoff = 2
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
 
+# Nias name to pop up.
+
 def log_signup(record, previous_member):
+    #.    member = record.split(',')[0]
+    member, class_name, session = record.split(',')
+    print(previous_member, member)
+    return member
+
+      
     # TODO: pull the member name out of `record`
     # TODO: print the previous member and this one on one line
     # TODO: return this member's name
-    pass
+    
 
 last_member = "nobody yet"
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
+# last_member = log_signup(signups[0], last_member)
+# last_member = log_signup(signups[1], last_member)
+
+# Asked AI how for a better alternative to this variable call
+for record in signups[0:2]:   
+    last_member = log_signup(record, last_member)
+
+
 
 last_seen = "nobody yet"
 
