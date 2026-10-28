@@ -256,14 +256,16 @@ print("what show_long_bookings handed back:", handed_back)
 
 
 
-sessions_cutoff = 4 
+sessions_cutoff = 4
 
 
 def count_reaching_outside(records):
     count = 0 
     for row in records:
         member, class_name, session = row.split(',')
-        
+        if int(session) >= sessions_cutoff:
+            count += 1
+    return count
 
 
     # TODO: same count as count_long_bookings, but take NO minimum
