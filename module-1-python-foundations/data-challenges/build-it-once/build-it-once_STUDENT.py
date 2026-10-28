@@ -274,10 +274,18 @@ def count_reaching_outside(records):
 
 
 print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
+#print(count_reaching_outside(signups))
+#print(count_long_bookings(signups, 4))
 
+# print(count_long_bookings(signups, 4))
 sessions_cutoff = 2
 
-# TODO: call count_reaching_outside(signups) again, unchanged, and print it
+# print(count_long_bookings(signups, 2))
+# sessions_cutoff = 3
+# print(count_long_bookings(signups,3))
+
+# TODO: call count_reaching_outside(signups) again, unchanged, and print it. 
+#
 # TODO: print count_long_bookings(signups, 4) underneath for comparison
 
 # ===== Step 4: Pass the Last Member In and Out, Then Trigger an UnboundLocalError =====
