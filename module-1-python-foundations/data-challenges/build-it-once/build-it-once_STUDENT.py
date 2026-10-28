@@ -309,11 +309,13 @@ sessions_cutoff = 2
 # 4. Predict in a comment whether its print line will work. The step above
 #    showed a function reading an outside name just fine.
 
-# I think itll work fine as its reading a function from outside the ma,e.
+# I think itll work fine as its reading a function from outside.
 
 # 5. Run the file, read the traceback, and write down the exception name,
 #    the variable and the line it points at, in your own words, before you
 #    look anything up.
+
+# UnboundLocalError: local variable 'last_seen' referenced before assignment : 
 #
 # global is not the fix. The working half of this same step already shows
 # what is: pass the value in, return it back out.
@@ -339,6 +341,7 @@ def log_signup(record, previous_member):
 last_member = "nobody yet"
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
+
 # last_member = log_signup(signups[0], last_member)
 # last_member = log_signup(signups[1], last_member)
 
@@ -347,19 +350,21 @@ for record in signups[0:2]:
     last_member = log_signup(record, last_member)
 
 
-
 last_seen = "nobody yet"
 
 def log_signup_broken(record):
+    #last_seen = "nobody yet"
+
     # Leave this body exactly as written. It is supposed to raise.
-    print("previous:", last_seen)
+    print("previous:", last_seen) 
     last_seen = record.split(",")[0]
     return last_seen
+   
 
-log_signup_broken(signups[2])
+# log_signup_broken(signups[2])
 
-# Your answer:
-#
+# Your answer: line 360, in log_signup_broken print("previous:", last_seen)
+# Its not picking up the "last_seen" as a local variable as its set outside of the needed function.
 #
 
 # ----- Share Out: Day 2 -----
