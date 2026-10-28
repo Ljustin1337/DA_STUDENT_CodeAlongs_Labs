@@ -107,14 +107,20 @@ swim_only = []
 
 for row in signups:
     member, class_name, session = row.split(',')
-    if class_name.strip() == "Swim":
+    if class_name == "Swim":
         swim_only.append(row)
 
 
 
+spin_only = []
+
+for row in signups:
+    member, class_name, session = row.split(',')
+    if class_name == "Spin":
+        spin_only.append(row)
 
 # TODO: fill swim_only with just the Swim records
-
+print("spin only:  ", total_sessions(spin_only))
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
 
