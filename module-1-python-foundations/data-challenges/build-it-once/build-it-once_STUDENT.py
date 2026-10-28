@@ -172,7 +172,7 @@ def count_long_bookings(records, minimum):
     
 
 def show_long_bookings(records, minimum):
-    count = 0 
+    count = 0
     for row in records:
         member, class_name, session = row.split(',')
         if int(session) >= minimum:
@@ -236,23 +236,40 @@ print("what show_long_bookings handed back:", handed_back)
 #    Day 1's second step. All you are predicting here is which of those two
 #    numbers each of the two identical-looking calls prints. Write both in a
 #    comment, and write why.
+
+# This time it should print out 7 after as these were the results of the orginal 
+# cut off apart of day 1. As it wont print the 11 as we have the session cut off set to 4
+
 # 2. Write count_reaching_outside(records) so it counts the same thing
 #    count_long_bookings does, but takes no minimum parameter. It reads
 #    sessions_cutoff from outside the function instead.
+
 # 3. Call it once at a cutoff of 4, printing the result.
+
 # 4. Call it again, unchanged, after sessions_cutoff becomes 2, and print
 #    that result too. The call line is identical both times.
+
 # 5. Print count_long_bookings(signups, 4) underneath for comparison.
 #
 # Both versions run clean. Decide which of the two you would trust in a file
 # you did not write, and say what in the call line told you.
 
+
+
 sessions_cutoff = 4 
 
+
 def count_reaching_outside(records):
+    count = 0 
+    for row in records:
+        member, class_name, session = row.split(',')
+        
+
+
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
     pass
+
 
 print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
 
