@@ -195,6 +195,14 @@ print("what show_long_bookings handed back:", handed_back)
 # 
 # The function returned `None` because when using print instead of return. 
 # return passes the value back to the loop, whereas print only outputs it to the console.
+#
+# Parameters used: minimun as we used it to hold the arguemnts values of 4 or more sessions and 
+# 2 or more sessions. The actual values we used for our function.
+# 
+# 
+
+
+
 
 # ----- Share Out: Day 1 -----
 # Last 15 minutes, back together as a class. Bring:
