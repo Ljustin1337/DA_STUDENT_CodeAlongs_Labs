@@ -467,14 +467,29 @@ pass
 # for, and write a verdict beside each printed result.
 #
 # 1. total_for on an empty list. Print the result.
+# Answer: 0 
+
 # 2. total_for on a list holding exactly one record.
-# 3. total_for with a member name that is not in the file at all, such as
+# Answer: it will print the total for one record, which should equal the first row's session number, followed by GOOD if result matches the expected value.
+ 
+
+# # 3. total_for with a member name that is not in the file at all, such as
 #    "Marco".
+# Answer: 0 as there isnt any file with the name marco.
+
 # 4. total_for with a name differing from a real member's only by
 #    capitalization, such as "nia" for Nia.
+# Answer: The name won't be found because string comparison is case sensitive and "nia" doesn't mean "Nia".
+
 # 5. signups_for on the empty list.
+
+# Answer: A similar structure to part one of this assigment as the value should come back as "[]" since the loop never scans any rows so it never moves from the starting value given.
+
 # 6. Add up the per-member totals for all five members, and print that sum
 #    beside total_sessions(signups). The two should agree.
+
+# Answer: 45 should be the sum.
+
 # 7. Write a verdict beside each of the five results in a comment: right, or
 #    just a number that did not crash? Argue each one with your partner
 #    first.
@@ -482,14 +497,48 @@ pass
 # Every line runs clean. Two of them deserve a different answer than they
 # get.
 
+
+
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
 
-# TODO: an empty list
+# TODO: an empty list 
+
+print("empty lists:", total_for([],"Omar"))
+
 # TODO: a list holding exactly one record
+#total_for = ["Swim", [1]]
+#if "Swim" in total_for:
+#    print('valuefound')
+
+one_record = signups[:1]
+Found = sessions_in(signups[0])
+
+result = total_for(one_record, "Nia")
+print("total for record", result)
+
+if result == Found:
+    print("GOOD")
+else:
+    print('BAD SOS')
+
 # TODO: a member name that is not in the file at all
+
+result = total_for(signups, "MaRco")
+print("Non member:", result)
+# Result: Non member: 0  
+
 # TODO: a name that differs from a real member's only by capitalization
+print(signups_for([],"Nia"))
+
 # TODO: then: do the per-member totals add up to the whole-file total?
+
+member_total = total_for(signups,"Nia") + total_for(signups, "Omar") + total_for(signups, "Tess") + total_for(signups, "Rafi") + total_for(signups, "Gwen")
+print("Memeber Total is", member_total) 
+print("Session Total", total_sessions(signups))
+
+
+
 
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
