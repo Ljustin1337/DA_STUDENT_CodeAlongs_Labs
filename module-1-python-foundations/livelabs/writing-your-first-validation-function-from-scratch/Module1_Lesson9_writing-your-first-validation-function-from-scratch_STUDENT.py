@@ -29,9 +29,12 @@ print('----- 1. Step 1: Just Look at the Data -----')
 # TODO: create a list called lines with these 5 strings:
 # "ADD,Chess,4", "ADD,Checkers,two", "ADD,Uno", "" (empty), "ADD,Clue,6"
 
+lines = ["ADD,Chess,4", "ADD,Checkers,two", "ADD,Uno", "", "ADD,Clue,6"]
 
 # TODO: loop over lines and print each one
 
+for line in lines:
+    print(line) 
 
 # ===== 2. Step 2: Check Each Line's Shape =====
 # Check each line and report whether it has exactly three fields.
@@ -40,6 +43,14 @@ print("----- 2. Step 2: Check Each Line's Shape -----")
 # TODO: split each line on "," into a variable called fields
 # TODO: if fields has exactly 3 items, print "Looks valid:" and the line
 # TODO: otherwise, print "Wrong number of fields:" and the line
+
+for line in lines:
+    fields = line.split(",")
+    if len(fields) == 3: 
+        print('Looks valid:', line)
+    else:
+        print("wrong number of fields:", line)
+    
 
 # PREDICT before you run: Which message prints for "ADD,Uno"?
 # Your answer:
@@ -53,9 +64,16 @@ print("----- 2. Step 2: Check Each Line's Shape -----")
 print('----- 3. Step 3: Wrap It in a Real Function -----')
 # TODO: define validate_batch(lines) — move Step 2's loop and
 # conditional inside it
-
+def validate_batch(lines):
+    for line in line:
+        fields = line.split(",")
+        if len(fields) == 3:
+            print("Looks Gucci", line)
+        else:
+            print("wrong number of fields:",lines)
 
 # TODO: call validate_batch(lines)
+validate_batch(lines)
 
 
 # ===== 4. Step 4: Add enumerate() =====
@@ -63,6 +81,14 @@ print('----- 3. Step 3: Wrap It in a Real Function -----')
 print('----- 4. Step 4: Add enumerate() -----')
 # TODO: change the loop to "for line_number, line in
 # enumerate(lines, start=1):"
+def validate_batch_update(lines):
+    for line_number, line in enumerate(lines, start = 1):
+        fields = line.split(',')
+        if len(fields) == 3:
+            print(f"line {line_number} :Looks Valid")
+        else:
+            print(f"Line {line_number} : Wrong Number")    
+
 # TODO: update both print statements to use f"Line {line_number}: ..."
 # instead of printing the line's text
 
