@@ -12,6 +12,16 @@ header = rows[0]
 taps = rows[1:]
 
 
+#Predictions 
+# What does one row represent?
+# Each row represents a tap_id(a swpie in/invoice), card_id(applepay or cc), station, point of entry
+# Which fields hold numbers, and which hold text? 1)Text 2)Text 3)string 4)String 
+# What already looks wrong, missing or inconsistent? Doesn't look too bad as its seperated by tap_id currently. 
+# we should be able to refine the searches more. Data seems to be all there.
+
+
+
+
 # ===== Day 1 =====
 
 # Step 1: Write `scan_for()` and Count Its Comparisons for Three Tap IDs
