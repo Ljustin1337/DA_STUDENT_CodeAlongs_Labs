@@ -3,7 +3,7 @@
 
 import json
 
-DATA_FILE = "station_taps.csv"  # edit the filepath with the data
+DATA_FILE = "module-1-python-foundations/data-challenges/pick-the-right-container/station_taps.csv"  # edit the filepath with the data
 
 with open(DATA_FILE) as f:
     rows = [line.split(",") for line in f.read().splitlines() if line]
