@@ -65,7 +65,7 @@ print('----- 3. Step 3: Wrap It in a Real Function -----')
 # TODO: define validate_batch(lines) — move Step 2's loop and
 # conditional inside it
 def validate_batch(lines):
-    for line in line:
+    for line in lines:
         fields = line.split(",")
         if len(fields) == 3:
             print("Looks Gucci", line)
@@ -82,10 +82,10 @@ print('----- 4. Step 4: Add enumerate() -----')
 # TODO: change the loop to "for line_number, line in
 # enumerate(lines, start=1):"
 def validate_batch_update(lines):
-    for line_number, line in enumerate(lines, start = 1):
+    for line_number, line in enumerate(lines, start= 1):
         fields = line.split(',')
         if len(fields) == 3:
-            print(f"line {line_number} :Looks Valid")
+            print(f"Line {line_number} :Looks Valid")
         else:
             print(f"Line {line_number} : Wrong Number")    
 
@@ -109,6 +109,17 @@ print('----- 5. Putting It Together: Both Checks at Once -----')
 # "bad players"
 # TODO: else, unpack fields into action, title, players and report
 # "OK, {title}"
+
+def validate_batch_update2(lines):
+    for line_number, line in enumerate(lines, 1):
+        fields = line.split(',')
+        if len(fields) != 3:
+            print(f"Line {line_number}:Wrong format")
+        elif not fields[2].isdigit(): 
+            print(f"Line {line_number}: bad players!")
+        else:
+            action, title, players = fields
+            print(f"Line {line_number}:Ok, {title}")    
 
 # PREDICT before you run: Which check flags "ADD,Checkers,two"? The len(fields)
 #                         check, the unpacking line, or the isdigit() check?
