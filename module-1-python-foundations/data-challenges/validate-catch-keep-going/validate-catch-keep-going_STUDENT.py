@@ -16,6 +16,11 @@ rows = [line for line in lines[1:] if line]
 # TODO: assign `EXPECTED_FIELDS` to 5
 # TODO: assign `ALLOWED_STATUS` to ["Open", "In Progress", "Closed"]
 
+Expected_fields = 5 
+Allowed_status = ["open", "in progress", "Closed"]
+
+
+
 
 def validate_request(row):
     # TODO: assign `fields` to `row` split on commas
