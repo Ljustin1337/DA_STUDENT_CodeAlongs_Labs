@@ -64,7 +64,12 @@ print("passed Day 1 validation:", valid)
 
 # Step 3: Build the Days-Open Report With No Protection and Watch It Crash
 # TODO: assign `total_days` and `counted` to 0
+total_days = 0
+counted = 0 
 # TODO: loop over `rows`; `continue` past any row validate_request() rejects
+for row in rows: 
+    
+
 # TODO: assign `days_open` to int() of the row's fourth field
 # TODO: add `days_open` to `total_days` and 1 to `counted`
 # TODO: print the row's ID, "days open:" and `days_open`
