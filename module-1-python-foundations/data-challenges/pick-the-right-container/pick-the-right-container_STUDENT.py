@@ -80,14 +80,14 @@ print("pairs counted:", pairs)
 
 # TODO: assign `big` to len(taps) * 10
 
-big = len(taps) * 10
+big = len(taps) * 10 
 print("big scan worst case", big)
 print("big pair count:", big * big)
 
 
 # TODO: print the scan's worst case and the pair loop's count on `big` rows
 
-# Step 2, answer 1:
+# Step 2, answer 1: 
 #
 # Step 2, answer 2:
 #
@@ -96,11 +96,29 @@ print("big pair count:", big * big)
 # ===== Day 2 =====
 
 # Step 3: Count Taps Per Card With Two Parallel Lists, and Their Comparisons
+
 # TODO: assign `card_ids` to an empty list (each card, first-seen order)
+card_ids = []
 # TODO: assign `tap_counts` to an empty list (the count for card_ids[i])
+tap_counts = []
 # TODO: assign `comparisons` to 0
+comparison = 0 
+
 # TODO: loop over `taps`; assign `card` to row[1] and `found` to False
+card = None
+found = False
+
+for row in tap_counts:
+    card = row[1]
+    found = False
+    for i in range(len(card_ids)):
+        comparison += 1
+# print (card, found)
 # TODO: inside it, loop over range(len(card_ids)); add 1 to `comparisons`
+
+
+
+
 # TODO: if card_ids[i] == card, add 1 to tap_counts[i], set found, break
 # TODO: after the inner loop, if not found, append `card` and 1 to the lists
 
