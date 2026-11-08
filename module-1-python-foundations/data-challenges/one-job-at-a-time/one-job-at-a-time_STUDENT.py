@@ -39,7 +39,6 @@ def validate_donation(record):
       
     # TODO: in except ValueError, return False, "pounds is not a number"
     # TODO: return True and ""
-pass
 
 
 # TODO: assign `records` to read_donations(DATA_FILE), `valid` to []
@@ -67,20 +66,38 @@ def summarize_donations(valid_records):
     # TODO: add a one-sentence docstring naming its one job
     """ Adding values into the donation lines """
     # TODO: assign `by_category` to {} and `total_pounds` to 0.0
+
     by_category = {}
     total_pounds = 0.0
     # TODO: loop over `valid_records`; split each record on commas into `parts`
-    for 
+
+    for records in valid_records:
+        parts = record.split(",")
+        category = parts[2]
+        pounds = float(parts[3])
     # TODO: assign `category` to parts[2], `pounds` to float(parts[3])
     # TODO: if `category` is not in `by_category`, add an entry for it
-    # TODO: start that entry as {"donations": 0, "pounds": 0.0}
+
+        if category not in by_category:
+            by_category[category] = {"donations": 0, "pounds": 0.0}
+    # TODO: start that entry as {"donations": 0, "pounds": 0.0
     # TODO: add 1 to its "donations" and `pounds` to its "pounds"
+        by_category[category]["donations"] += 1
+        by_category[category]["pounds"] += pounds
+        total_pounds += pounds             
+
     # TODO: add `pounds` to `total_pounds`
     # TODO: return a dict of "records", "total_pounds" and "by_category"
-    pass
+    return { "records": len(valid_records),
+             "total_pounds": total_pounds,
+             "by_category": by_category,
+    }
+    
+    
 
 
 # TODO: assign `summary` to summarize_donations(valid)
+summary = summarize_donations(valid)
 print("records:", summary["records"], "| total pounds:",
       summary["total_pounds"])
 for category, stats in summary["by_category"].items():
@@ -95,18 +112,31 @@ for category, stats in summary["by_category"].items():
 
 # Step 3: Add `export_summary()` and `run_pipeline()`, Then Print Docstrings
 def export_summary(summary, path):
+    """Summary Dictionary for JSON file to return to path"""
+    with open(path, "w")as f:
+        json.dump(summary, f, indent=2)
+    return path    
     # TODO: add a one-sentence docstring naming its one job
     # TODO: in a with open(path, "w") block, json.dump `summary`, indent=2
     # TODO: return `path`
-    pass
+    
 
 
 def run_pipeline(in_path, out_path, summarize):
+    """Read, Validate, and expoting the log in one call"""
+    kept = []
+    for records in read_donations(in_path):
+        ok, reason = validate_donation(record)
+        if ok:
+            kept.append(record)
+    return export_summary(summarize(kept), out_path)
+        
+
     # TODO: add a one-sentence docstring naming its one job
     # TODO: assign `kept` to [] and loop over read_donations(in_path)
     # TODO: append each record that validate_donation() passes to `kept`
     # TODO: return export_summary() of summarize(kept) and `out_path`
-    pass
+    
 
 
 written = run_pipeline(DATA_FILE, "donation_summary.json",
