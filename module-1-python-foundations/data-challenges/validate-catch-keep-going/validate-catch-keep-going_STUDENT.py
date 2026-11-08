@@ -77,17 +77,25 @@ print("passed Day 1 validation:", valid)
 
 # Step 3: Build the Days-Open Report With No Protection and Watch It Crash
 # TODO: assign `total_days` and `counted` to 0
-total_days = 0
-counted = 0 
+# total_days = 0
+# counted = 0 
 # TODO: loop over `rows`; `continue` past any row validate_request() rejects
-for row in rows: 
+# for row in rows:
+#    ok, reason = validate_request(row)
+#    if not ok:
+#        continue
+#    fields = row.split(",")
 
 # TODO: assign `days_open` to int() of the row's fourth field
+#    days_open = int(fields[3])
 # TODO: add `days_open` to `total_days` and 1 to `counted`
+#    total_days += days_open
+#    counted += 1
 # TODO: print the row's ID, "days open:" and `days_open`
+#   print(fields[0], "days open:", days_open)
 # TODO: after your answers, comment out this step so Step 4 can run
 
-    print("average days open:", total_days / counted)
+#print("average days open:", total_days / counted)
 
 # Step 3, answer 1:
 #
@@ -99,17 +107,37 @@ for row in rows:
 
 # Step 4: Rebuild the Report So Every Row Is Counted or Skipped
 def check_days_open(value):
+            
     # TODO: in a try, assign `days` to int(value)
+    try:
+        days = int(value)
     # TODO: in except ValueError, return False and a reason
+    except ValueError:
+        return False, "days_open is not a number: " + value
+    
     # TODO: make that reason "days_open is not a number: " plus `value`
     # TODO: if `days` is below 0, return False and a reason
+    if days < 0: 
+        return False, "days_open is negative: " + value
+    return True, "ok"
     # TODO: make that reason "days_open is negative: " plus `value`
     # TODO: return True and "ok"
     pass
 
-
+total_days = 0 
+counted = 0 
+skipped = 0 
 # TODO: assign `total_days`, `counted` and `skipped` to 0
 # TODO: loop over `rows`; unpack validate_request(row) into ok, reason
+for row in rows:
+    fields = row.split(",")
+    ok, reason = validate_request(row)
+if ok:
+    total_days += int(fields[3])
+    counted += 1
+else:
+    skipped += 1 
+    print(fields[0], "SKIPPED -", reason) 
 # TODO: if ok, unpack check_days_open() of the fourth field into ok, reason
 # TODO: if still ok, add the days to `total_days` and 1 to `counted`
 # TODO: else add 1 to `skipped`; print the ID, "SKIPPED -" and `reason`
