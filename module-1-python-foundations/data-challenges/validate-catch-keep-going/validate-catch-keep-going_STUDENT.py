@@ -54,6 +54,12 @@ print(validate_request("SR-1009,Water System,Queens,4,Escalated"))
 # TODO: assign `valid` to 0
 valid = 0 
 # TODO: loop over `rows`; unpack validate_request(row) into ok, reason
+for row in rows:
+    ok, reason = validate_request(row)
+    if ok:
+        valid += 1
+    else:
+        print(row.split(",")[0], "REJECTED -", reason)
 # TODO: if `ok`, add 1 to `valid`
 # TODO: else print row.split(",")[0], "REJECTED -" and `reason`
 
