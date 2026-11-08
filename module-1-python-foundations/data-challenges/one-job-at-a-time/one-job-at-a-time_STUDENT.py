@@ -125,7 +125,7 @@ def export_summary(summary, path):
 def run_pipeline(in_path, out_path, summarize):
     """Read, Validate, and expoting the log in one call"""
     kept = []
-    for records in read_donations(in_path):
+    for record in read_donations(in_path):
         ok, reason = validate_donation(record)
         if ok:
             kept.append(record)
@@ -154,14 +154,41 @@ for func in [read_donations, validate_donation, summarize_donations,
 
 # Step 4: Swap In `summarize_by_day()` and Count the Functions You Edited
 def summarize_by_day(valid_records):
+    """Total donation count and pounds aquired per day"""
+    by_day = {}
+    total_pounds = 0.0
+
+    for records in valid_records:
+        parts = record.split(",")
+        day = parts[4]
+        pounds = float(parts[3])
+
+
+        if day not in by_day:
+            by_day[day] = {"donations": 0, "pounds": 0.0}
+        
+        by_day[day]["donations"] += 1
+        by_day[day]["pounds"] += pounds
+        total_pounds += pounds             
+
+    return { 
+        "records": len(valid_records),
+        "total_pounds": total_pounds,
+        "by_day": by_day,
+    }
     # TODO: add a one-sentence docstring naming its one job
     # TODO: return the same dict shape, with "by_day" keyed by parts[4]
-    pass
+
+    
 
 
 # TODO: call run_pipeline(DATA_FILE, "donation_summary.json", summarize_by_day)
+
+run_pipeline(DATA_FILE, "donation_summary.json", summarize_by_day)
 # TODO: replace None with json.load() of "donation_summary.json"
-reloaded = None
+
+with open("donation_summary.json") as f:
+    reloaded = json.load(f)
 
 print("records:", reloaded["records"], "| total pounds:",
       reloaded["total_pounds"])
