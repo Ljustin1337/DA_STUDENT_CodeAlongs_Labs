@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate, Catch, Keep Going: see DataChallengeOverview&Steps.md."""
 
-DATA_FILE = "service_requests.csv"  # edit the filepath with the data
+DATA_FILE = "/Users/jlee333/Desktop/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/validate-catch-keep-going/service_requests.csv"  # edit the filepath with the data
 
 with open(DATA_FILE) as f:
     lines = f.read().splitlines()
@@ -16,23 +16,29 @@ rows = [line for line in lines[1:] if line]
 # TODO: assign `EXPECTED_FIELDS` to 5
 # TODO: assign `ALLOWED_STATUS` to ["Open", "In Progress", "Closed"]
 
-Expected_fields = 5 
-Allowed_status = ["open", "in progress", "Closed"]
+EXPECTED_FIELDS = 5 
+ALLOWED_STATUS = ["Open", "In Progress", "Closed"]
 
 
 
 
 def validate_request(row):
     # TODO: assign `fields` to `row` split on commas
+    fields = row.split(",")
     if len(fields) != EXPECTED_FIELDS:
         return False, "wrong field count: " + str(len(fields))
+    request_id,	complaint_type,	borough, days_open,	status = fields
     # TODO: unpack `fields` into the five names in the CSV header
     # TODO: if `borough` is empty, return False and "borough is empty"
+    if borough == "":
+        return False, "borough is empty"
     # TODO: if `status` is not in ALLOWED_STATUS, return False and a reason
+    if status not in ALLOWED_STATUS:
     # TODO: make that reason "status not allowed: " plus `status`
-    # TODO: return True and "ok"
+        return False, "status not allowed" + status
+ # TODO: return True and "ok"
+    return True, "ok"
     pass
-
 
 print(validate_request("SR-1001,Noise - Residential,Brooklyn,3,Closed"))
 print(validate_request("SR-1004,Rodent,,6,Closed"))
@@ -46,6 +52,7 @@ print(validate_request("SR-1009,Water System,Queens,4,Escalated"))
 
 # Step 2: Run All 15 Rows Through the Validator and Report Each Rejection
 # TODO: assign `valid` to 0
+valid = 0 
 # TODO: loop over `rows`; unpack validate_request(row) into ok, reason
 # TODO: if `ok`, add 1 to `valid`
 # TODO: else print row.split(",")[0], "REJECTED -" and `reason`
@@ -74,7 +81,7 @@ for row in rows:
 # TODO: print the row's ID, "days open:" and `days_open`
 # TODO: after your answers, comment out this step so Step 4 can run
 
-print("average days open:", total_days / counted)
+    print("average days open:", total_days / counted)
 
 # Step 3, answer 1:
 #
