@@ -68,7 +68,6 @@ total_days = 0
 counted = 0 
 # TODO: loop over `rows`; `continue` past any row validate_request() rejects
 for row in rows: 
-    
 
 # TODO: assign `days_open` to int() of the row's fourth field
 # TODO: add `days_open` to `total_days` and 1 to `counted`

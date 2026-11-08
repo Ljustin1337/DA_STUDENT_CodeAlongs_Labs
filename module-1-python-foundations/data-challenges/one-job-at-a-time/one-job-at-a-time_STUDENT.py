@@ -3,7 +3,7 @@
 
 import json
 
-DATA_FILE = "pantry_donations.csv"  # edit the filepath with the data
+DATA_FILE = "/Users/jlee333/Desktop/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/one-job-at-a-time/pantry_donations.csv"  # edit the filepath with the data
 
 
 # ===== Day 1 =====
@@ -21,19 +21,39 @@ def read_donations(path):
 
 def validate_donation(record):
     # TODO: add a one-sentence docstring naming its one job
+    """ Return a verdict or reason of a record"""
     # TODO: assign `parts` to `record` split on commas
+    parts = record.split(",")
     # TODO: return False, "wrong field count" if `parts` lacks 5 fields
+    if len(parts) != 5: 
+        return (False, "wrong field count")
     # TODO: return False, "missing category" if parts[2].strip() is ""
+    if parts[2].strip() == "":
+        return (False,"missing category")
     # TODO: in a try, call float(parts[3])
+    try:
+        float(parts[3])
+    except ValueError:
+        return (False, "pounds is not a number")
+    return (True,"")
+      
     # TODO: in except ValueError, return False, "pounds is not a number"
     # TODO: return True and ""
-    pass
+pass
 
 
 # TODO: assign `records` to read_donations(DATA_FILE), `valid` to []
+records = read_donations(DATA_FILE)
+valid = []
 # TODO: loop over `records`; unpack validate_donation(record) as ok, reason
+for record in records:
+    ok, reasons = validate_donation(record) 
 # TODO: if `ok`, append `record` to `valid`
+    if ok:
+        valid.append(record)
 # TODO: else print "rejected", the record's ID plus ":", and `reason`
+    else:
+        print("rejected", record.split(",")[0] + ":", reasons)
 print(len(valid), "usable records out of", len(records))
 
 # Step 1, answer 1:
@@ -45,8 +65,12 @@ print(len(valid), "usable records out of", len(records))
 # Step 2: Write `summarize_donations()` for the Category Breakdown Only
 def summarize_donations(valid_records):
     # TODO: add a one-sentence docstring naming its one job
+    """ Adding values into the donation lines """
     # TODO: assign `by_category` to {} and `total_pounds` to 0.0
+    by_category = {}
+    total_pounds = 0.0
     # TODO: loop over `valid_records`; split each record on commas into `parts`
+    for 
     # TODO: assign `category` to parts[2], `pounds` to float(parts[3])
     # TODO: if `category` is not in `by_category`, add an entry for it
     # TODO: start that entry as {"donations": 0, "pounds": 0.0}

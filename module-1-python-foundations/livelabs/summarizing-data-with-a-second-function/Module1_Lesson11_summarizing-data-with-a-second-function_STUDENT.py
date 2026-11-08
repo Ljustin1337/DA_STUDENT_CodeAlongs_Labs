@@ -29,15 +29,21 @@ print('----- 1. Step 1: A Formatted Listing -----')
 # TODO: create a list called games of (title, players) tuples:
 # ("Chess", 4), ("Checkers", 6), ("Clue", 1), ("Uno", 8)
 
+games = [("Chess", 4), ("Checkers", 6), ("Clue", 1), ("Uno", 2)]
 
 # TODO: define summarize_batch(games) that prints one formatted
 # line per game: "{title}: {players} available"
 
+def summarize_batch(games):
+    for title,player in games: 
+        print(f"{title}:{player} available")
+
+
 
 # TODO: call summarize_batch(games)
-
+summarize_batch(games)
 # PREDICT before you run: What is the third line this code prints?
-# Your answer:
+# Your answer: 
 #
 #
 
@@ -45,12 +51,28 @@ print('----- 1. Step 1: A Formatted Listing -----')
 # ===== 2. Step 2: Add a Low-Availability Alert =====
 # Add a second list to summarize_batch that flags every game with fewer than 3
 # players.
+
+
 print('----- 2. Step 2: Add a Low-Availability Alert -----')
 # TODO: keep Step 1's listing loop
+
+def summarize_batch1(games):
+    for title,player in games:
+        print(f"{title}:{player} available")
+        
 # TODO: print a blank line, then "Low availability:"
+        print()
+        print("low availability")
 # TODO: loop over games again; if players < 3, print
+
+        for title,player in games: 
+                if player >= 3 : 
+                    print(f"{title}:{player}")
+
 # "  {title} ({players})"
 # TODO: call summarize_batch(games)
+
+summarize_batch1(games)
 
 # PREDICT before you run: In the games list, change Uno from 8 to 2. What
 #                         changes in the output?
@@ -64,9 +86,20 @@ print('----- 2. Step 2: Add a Low-Availability Alert -----')
 # list.
 print('----- 3. Step 3: Add a Total Count -----')
 # TODO: keep Step 2's listing and alert loops
+
+def summarize_batch2(games):
+    for title,player in games:
+        if player < 3:
+            print(f"{title}:{player} available")
+
 # TODO: print a blank line, then f"{len(games)} games total"
+    print()
+    print(f"{len(games)} games total")
+
 # TODO: call summarize_batch(games)
 
+games.append(("Dice", 5))
+summarize_batch2(games)
 # PREDICT before you run: Add one more game to the games list, like ("Dice",
 #                         5). What prints last?
 # Your answer:
