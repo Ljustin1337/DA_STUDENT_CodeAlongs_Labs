@@ -196,6 +196,7 @@ for day, stats in sorted(reloaded["by_day"].items()):
     print(day, stats["donations"], "donations,", stats["pounds"], "lbs")
 
 # Step 4, answer 1:
+
 #
 # Step 4, answer 2:
 #
