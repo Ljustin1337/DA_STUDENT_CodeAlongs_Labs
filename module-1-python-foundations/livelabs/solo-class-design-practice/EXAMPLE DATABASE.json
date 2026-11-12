@@ -1,0 +1,14 @@
+[
+  {"name": "Cordless Drill", "tool_type": "power", "current_borrower": "Maria Lopez", "in_storage": false, "needs_fixing": false},
+  {"name": "Cordless Drill", "tool_type": "power", "current_borrower": null, "in_storage": true, "needs_fixing": true},
+  {"name": "Cordless Drill", "tool_type": "power", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Pressure Washer", "tool_type": "power", "current_borrower": "Devon Carter", "in_storage": false, "needs_fixing": false},
+  {"name": "Pressure Washer", "tool_type": "power", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Circular Saw", "tool_type": "power", "current_borrower": null, "in_storage": true, "needs_fixing": true},
+  {"name": "Extension Ladder", "tool_type": "ladder", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Step Ladder", "tool_type": "ladder", "current_borrower": "Priya Shah", "in_storage": false, "needs_fixing": false},
+  {"name": "Step Ladder", "tool_type": "ladder", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Claw Hammer", "tool_type": "hand", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Wheelbarrow", "tool_type": "garden", "current_borrower": null, "in_storage": true, "needs_fixing": false},
+  {"name": "Garden Rake", "tool_type": "garden", "current_borrower": "James Whitfield", "in_storage": false, "needs_fixing": false}
+]

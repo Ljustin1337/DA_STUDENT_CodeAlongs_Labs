@@ -41,8 +41,11 @@ SUBMIT
 
 # Your answer:
 # Tool - class 
-# Current owner of tool: This can help us track the owner when they need the tool back.
-# Tool_type: To help us see what tool type and if avaliable to be lent.  
+# current_borrower: Tracks the name of the person who currently has the tool checked out so we know who to contact to get it back.
+# tool_type: Categorizes the tool (e.g., gardening, power tool, hand tool) to help users search the inventory.
+# in_storage: A True/False flag that keeps track of whether the tool is on hand and available to be lent out.
+# needs_fixing: A True/False flag to identify if a returned tool is broken and needs to be sent out for repair.
+# name: Identifying the tool name 
 
 # ===== Step 3: Write __init__ and a Method, From Scratch =====
 # There is no single correct design here. Your class name, your attribute
@@ -52,6 +55,20 @@ SUBMIT
 
 # TODO: Write __init__ and a Method, From Scratch
 
+class Tool:
+    def __init__(self, name, tool_type):
+        self.name = name
+        self.tool_type = tool_type
+        self.current_borrower = None
+        self.in_storage = True 
+        self.needs_fixing = False
+
+    def out_time(self, lent_to):
+        self.current_borrower = lent_to
+        self.in_storage = False
+
+
+        
 # ===== Step 4: Instantiate 2+ Objects, Confirm Independent Storage =====
 # The same proof Day 13's lecture asked for, now on a class you designed
 # yourself. Predict what each print() will show before you run it.
