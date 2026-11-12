@@ -33,14 +33,16 @@ SUBMIT
 # lecture, and not one of the project's own 4 scenarios.
 
 # Your answer:
-#
+# The stakeholder needs us to indentify what tools are and how many of each tool is avaliable. 
+# Also, which tool is in need of a safety check prior to lending out to the community. 
 #
 
 # ===== Step 2: Decide Your Attributes, Each With a Reason From the Scenario =====
 
 # Your answer:
-#
-#
+# Tool - class 
+# Current owner of tool: This can help us track the owner when they need the tool back.
+# Tool_type: To help us see what tool type and if avaliable to be lent.  
 
 # ===== Step 3: Write __init__ and a Method, From Scratch =====
 # There is no single correct design here. Your class name, your attribute
