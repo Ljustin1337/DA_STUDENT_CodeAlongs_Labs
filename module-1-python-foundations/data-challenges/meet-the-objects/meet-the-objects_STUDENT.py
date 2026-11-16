@@ -67,7 +67,7 @@ fleet = []
 
 for s in stations:
 # TODO: append Station(s["name"], s["capacity"], s["bikes_available"])
-    fleet.append(Station(s["name"], s["capacity"], s["bikes_available"], s["station_id"], s["needs_maintenance"]))
+    fleet.append(Station(name=s["name"], capacity=s["capacity"], bikes_available=s["bikes_available"],needs_maintenance=s["needs_maintenance"], station_id=s["station_id"])) 
 # TODO: assign `busy`, `quiet` to two stations with equal needs_restock()
 busy = fleet[1]
 quiet = fleet[-1]
@@ -106,14 +106,14 @@ class Station:
         self.station_id = station_id
     
     def needs_restock(self):
-        if self.bikes_available < self.capacity/4:
-            return True
-        else:
-            return False
         return self.bikes_available < self.capacity/4
+    
+        
+      #  else:
+     #       return False
+    #    return self.bikes_available < self.capacity/4
     def __str__(self):
-        return f"{'Grand Army Plaza : 6 of 48 bikes'}, {self.name}:{self.bikes_available} of {self.capacity} bikes"
-
+        return f"{self.name}: {self.bikes_available} of {self.capacity} bikes"
     
 # TODO: add __str__(self) to return text like "Grand Army Plaza: 6 of 48 bikes" done
 # TODO: build it from self.name, self.bikes_available and self.capacity
@@ -130,10 +130,31 @@ print(fleet[:2])
 
 # Step 4: Add `__repr__` and Print the Van List for You and the Dispatcher
 # TODO: copy your Station class from Step 3 here
+class Station:
+    def __init__(self, name , capacity, bikes_available, needs_maintenance, station_id ):
+        self.name = name
+        self.capacity = capacity
+        self.bikes_available = bikes_available
+        self.needs_maintenance = needs_maintenance
+        self.station_id = station_id
+    def needs_restock(self):
+        return self.bikes_available < self.capacity/4
+    def __str__(self):
+        return f"{self.name}: {self.bikes_available} of {self.capacity} bikes"
+    def __repr__(self):
+        return f"Station({self.name!r},{self.bikes_available})"
+
 # TODO: add __repr__(self) to return text like "Station('Grand Army Plaza', 6)"
 # TODO: rebuild `fleet` from this class with the same loop as Step 2
 # TODO: assign `van_list` to []; loop over `fleet`
 # TODO: append each station whose needs_restock() returns True to `van_list`
+
+
+
+van_list = []
+for stations in fleet:
+    if station.needs_restock():
+        van_list.append(station)
 
 print(van_list)
 for station in van_list:
