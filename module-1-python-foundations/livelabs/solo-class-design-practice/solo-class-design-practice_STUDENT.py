@@ -67,6 +67,9 @@ class Tool:
         self.current_borrower = lent_to
         self.in_storage = False
 
+        
+    
+
 
         
 # ===== Step 4: Instantiate 2+ Objects, Confirm Independent Storage =====
